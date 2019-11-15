@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Author" content="Mariusz Najwer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Zamów Lekarza!" />
+        <meta name="keywords" content="Lekarz, rezerwacja, zamów" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{% block title %}Lekarz.com{% endblock %}</title>
+        {% block stylesheets %}
+
+          <!-- css jquery calendar -->
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+          <link rel="shortcut icon" href="">
+          <link href="{{ asset('CSS/nav.css') }}" rel="stylesheet" />
+          <link href="{{ asset('CSS/footer.css') }}" rel="stylesheet" />
+          <link href="{{ asset('CSS/firstPageIndex/firstPageIndex.css') }}" rel="stylesheet" />
+
+        {% endblock %}
+        {% block javascripts %}
+
+          <!-- Font Awesome -->
+          <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+          <!-- jquery -->
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+          <!-- jquery calendar-->
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+          <script src="JS/jQuery/Calendar/datepickerPolish.js"></script>
+
+          <!-- nav -->
+          <script src="JS/jQuery/Nav/nav.js"></script>
+
+          <script src="JS/jQuery/scroll/scrollGoTo.js"></script>
+
+          <!-- ajax mail-->
+          <script src="JS/AJAX/indexMailForm.js"></script>
+
+          <!-- test -->
+          <!-- <script src="JS/test.js"></script> -->
+
+        {% endblock %}
+
+    </head>
+    <body>
+        {% block body %}
+
+        {% include 'nav/nav.html.twig' %}
+
+        <section class="indexShowCase">
+          <div class="title">
+            <p>DOKTOR.PL</p>
+            <div class="arrow" id="click"></div>
+          </div>
+        </section>
+
+
+        <div id="start"></div>
+        <section class="profilSection">
+          <h1>PROFIL DZIAŁALNOŚCI</h1>
+          <h3>Zamów lekarza do domu w ciągu 5 minut!<h3>
+          <div class="profil">
+            <div class="childProfil">
+              <!-- opieka -->
+              <div class="iconProfil"><i class="fas fa-umbrella"></i></div>
+              <p>
+                 Opieka medyczna na najwyższym poziomie.
+                 Poszukujemy najdoskonalszych rozwiązań,
+                 które wpływają na <b>jakość</b> pracy w naszej firmie
+              </p>
+            </div>
+            <!-- o lekarzach -->
+            <div class="childProfil">
+              <div class="iconProfil"><i class="fas fa-user-md"></i></div>
+              <p>
+                Firma z 20-letnim doświadczeniem w świadczeniu usług medycznych,
+                zatrudniająca 25 wykwalifikowanych lekarzy
+              </p>
+            </div>
+            <!-- punktualnosc -->
+            <div class="childProfil">
+              <div class="iconProfil"><i class="fas fa-clock"></i></i></div>
+              <p>
+                Nie spóźniamy się i dotrzymujemy umówionych terminów.
+                Charakteryzujemy się pozytywną energią i perfekcją
+              </p>
+            </div>
+            <!-- cena -->
+            <div class="childProfil">
+              <div class="iconProfil"><i class="far fa-money-bill-alt"></i></div>
+              <p><i>Gwarancja cen</i></p>
+              pn - pt: 200zł <br>
+              codziennie od 6 do 19
+            </div>
+            <!-- poufnosc -->
+            <div class="childProfil">
+              <div class="iconProfil"><i class="fas fa-user-secret"></i></div>
+              <p>
+                Zapewniamy bezpieczeństwo i poufność danych pacjenta.
+                Dane wykorzystujemy tylko do usprawnienia działania serwisu.
+              </p>
+            </div>
+            <!-- progres -->
+            <div class="childProfil">
+              <div class="iconProfil"><i class="fas fa-chart-line"></i></div>
+              <p>
+                  Nieustana nauka powoduje, że przemieszczamy się do przodu krok za krokiem.
+                  Korzystamy z doświadczenia oraz nowości technologicznych
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- schedule -->
+        <section class="scheduleSection">
+          <h1>Harmonogram wizyty</h1>
+          <div class="schedule">
+
+            <div class="childScheduleNumber">1.</div>
+            <div class="childScheduleText">
+              <p>
+                Skontaktuj się z nami za pomocą <a href="/call">formularza zgłoszeniowego</a> lub telefonicznie
+              </p>
+            </div>
+
+            <div class="childScheduleNumber">2.</div>
+            <div class="childScheduleText">
+              <p>Kompleksowe badanie chorego. Rozpoznanie. Propozycja dodatkowych badań lub testów</p>
+            </div>
+
+            <div class="childScheduleNumber">3.</div>
+            <div class="childScheduleText">
+              <p>Wypisanie recepty, skierowania lub zwolnienia lekarskiego</p>
+            </div>
+
+            <div class="childScheduleNumber">4.</div>
+            <div class="childScheduleText">
+              <p>Wystawienie opinii na temat wizyty przez pacjenta</p>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="contactSection">
+          <h1>KONTAKT</h1>
+          <div class="contact">
+
+            <div class="contactInfo">
+              <p class="contactInfoP">Nasz Adres</p>
+              <p><i class="fas fa-map-marker"></i> Radosna 56/8, 53-332 Wrocław</p>
+              <p><i class="fas fa-phone"></i> (+48) 512 - 444 - 567</p>
+              <p><i class="fas fa-envelope"></i> wspaniala23@gmail.com</p><br>
+              <p><i class="fab fa-facebook"></i> <a class="socialLink"  target="_blank" href="https://www.facebook.com/profile.php?id=100006447601968"> Facebook</a></p>
+              <p><i class="fab fa-google-plus-g"></i> <a class="socialLink"  target="_blank" href="https://plus.google.com/+MariuszNajwer23"> Google Plus </a></p>
+              <p><i class="fab fa-twitter"></i> <a class="socialLink"  target="_blank" href="https://twitter.com/najwer23">Twitter</a></p>
+              <p><i class="fab fa-linkedin"></i> <a class="socialLink"  target="_blank" href="https://www.linkedin.com/in/najwer23/">Linkedin</a></p>
+            </div>
+
+            <div class="contactForm">
+              <form>
+                <p>Napisz do nas!<p>
+
+                <label>
+                  <div class="icon-ph"><i class="far fa-user-circle"></i></div>
+                  <input class="custom-text" type="text" name="name" placeholder="Imię" required> <br>
+                </label>
+
+                <label>
+                  <div class="icon-ph"><i class="far fa-user-circle"></i></div>
+                  <input class="custom-text" type="text" name="surname" placeholder="Nazwisko" required> <br>
+                </label>
+
+                <label>
+                  <div class="icon-ph"><i class="fas fa-space-shuttle"></i></div>
+                  <input class="custom-text" type="text" name="topic" placeholder="Temat" required> <br>
+                </label>
+
+                <label>
+                  <div class="icon-ph"><i class="fas fa-at"></i></div>
+                  <input class="custom-text" type="email" name="email" placeholder="Adres Email" required> <br>
+                </label>
+
+                <label>
+                  <textarea placeholder="Twoja wiadomość" id="text" type="text" name="text" required></textarea><br>
+                </label>
+
+                <button type="button" id="submitMail" class="btn fourth">Wyślij</button>
+                <div class="animation"><i class="fas fa-spinner"></i></div>
+                <div class="animation2">Proszę czekać...</div>
+
+                <div id="c"></div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+
+
+       {% include 'footer/footer.html.twig' %}
+        <!-- menu -->
+       <script src="JS/jQuery/Nav/showNav.js"></script>
+
+
+       {% endblock %}
+
+
+    </body>
+</html>

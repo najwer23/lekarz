@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Author" content="Mariusz Najwer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Zamów Lekarza!" />
+        <meta name="keywords" content="Lekarz, rezerwacja, zamów" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{% block title %}Lekarz.com{% endblock %}</title>
+        {% block stylesheets %}
+
+          <!-- css jquery calendar -->
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+          <link rel="stylesheet" href="CSS/nav.css">
+          <link rel="stylesheet" href="CSS/firstPageIndex/firstPageIndex.css">
+          <link rel="stylesheet" href="CSS/footer.css">
+          <link rel="stylesheet" href="CSS/jQuery/datepicker.css">
+
+        {% endblock %}
+        {% block javascripts %}
+
+          <!-- Font Awesome -->
+          <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+          <!-- jquery -->
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+          <!-- jquery calendar-->
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+          <script src="JS/jQuery/Calendar/datepickerPolish.js"></script>
+
+          <!-- nav -->
+          <script src="JS/jQuery/Nav/nav.js"></script>
+
+          <script src="JS/jQuery/scroll/scrollGoTo.js"></script>
+
+          <!-- test -->
+          <script src="JS/test.js"></script>
+
+        {% endblock %}
+
+    </head>
+    <body>
+        {% block body %}
+
+        <div class="push"></div>
+        <footer>
+          <div class="socialFooter">
+            <a class="octagon" href="https://www.facebook.com/profile.php?id=100006447601968"><i class="fab fa-facebook-f"></i></i></a>
+            <a class="octagon" href="https://plus.google.com/+MariuszNajwer23"><i class="fab fa-google-plus-g"></i></a>
+            <a class="octagon" href="https://twitter.com/najwer23"><i class="fab fa-twitter"></i></a>
+            <a class="octagon" href="https://www.linkedin.com/in/najwer23/"><i class="fab fa-linkedin"></i></a>
+          </div>
+          <div class="footer-laws">&copy; 2018 Mariusz Najwer. Wszystkie prawa zastrzeżone </div>
+        </footer>
+
+
+
+
+
+
+
+
+
+
+        <!-- menu -->
+       <script src="JS/jQuery/Nav/showNav.js"></script>
+       {% endblock %}
+
+
+    </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Author" content="Mariusz Najwer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Zamów Lekarza!" />
+        <meta name="keywords" content="Lekarz, rezerwacja, zamów" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{% block title %}Call Me!{% endblock %}</title>
+        {% block stylesheets %}
+
+          <!-- css jquery calendar -->
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+          <link rel="shortcut icon" href="">
+          <link href="{{ asset('CSS/nav.css') }}" rel="stylesheet" />
+          <link href="{{ asset('CSS/footer.css') }}" rel="stylesheet" />
+          <link href="{{ asset('CSS/callMe/callMe.css') }}" rel="stylesheet" />
+          <link href="{{ asset('CSS/jQuery/datepicker.css') }}" rel="stylesheet" />
+
+        {% endblock %}
+        {% block javascripts %}
+
+          <!-- Font Awesome -->
+          <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+          <!-- jquery -->
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+          <!-- jquery calendar-->
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+          <script src="JS/jQuery/Calendar/datepickerPolish.js"></script>
+
+          <!-- nav -->
+          <script src="JS/jQuery/Nav/nav.js"></script>
+
+          <!-- scroll -->
+          <script src="JS/jQuery/scroll/scrollGoTo.js"></script>
+
+          <!-- ajax Call-->
+          <script src="JS/AJAX/callForm.js"></script>
+
+          <!-- change data clock -->
+          <script src="JS/AJAX/changeClock.js"></script>
+
+        {% endblock %}
+
+    </head>
+    <body>
+        {% block body %}
+
+        {% include 'nav/nav.html.twig' %}
+
+        <section class="callMeShowCase">
+          <div class="title">
+            <p>WEZWIJ NAS!</p>
+            <div class="arrow" id="click"></div>
+          </div>
+        </section>
+
+        <section class="callSection">
+          <div id="start"></div>
+          <h1>Domowa wizyta lekarska</h1>
+
+          <form class="callForm">
+
+            <p>Dane pacjenta<p>
+            <div class="callInput">
+              <label>
+                <div class="icon-ph"><i class="far fa-user-circle"></i></div>
+                <input class="custom-text" type="text" name="name" placeholder="Imię" required> <br>
+              </label>
+
+              <label>
+                <div class="icon-ph"><i class="far fa-user-circle"></i></div>
+                <input class="custom-text" type="text" name="surname" placeholder="Nazwisko" required> <br>
+              </label>
+
+              <label>
+                <div class="icon-ph"><i class="fas fa-phone"></i></i></div>
+                <input class="custom-text" type="text" name="phone" placeholder="Telefon" required> <br>
+              </label>
+
+              <label>
+                <div class="icon-ph"><i class="far fa-envelope"></i></div>
+                <input class="custom-text" type="text" name="email" placeholder="E-mail" required> <br>
+              </label>
+            </div>
+
+
+
+
+            <p>Termin<p>
+            <div class="callInput">
+              <label>
+                <div class="icon-ph"><i class="far fa-calendar-alt"></i></div>
+                <input class="custom-text" type="text" id="datepicker" placeholder="Dzień wizyty" name="date" required readonly> <br>
+              </label>
+
+              <label>
+                <div class="icon-ph"><i class="far fa-clock"></i></div>
+                <select id="clock">
+                  <!-- <option value="1">od 6:00 do 10:00</option>
+                  <option value="2">od 10:00 do 14:00</option>
+                  <option value="3">od 14:00 do 18:00</option>
+                  <option value="4">od 18:00 do 22:00</option> -->
+                </select>
+              </label>
+            </div>
+
+
+
+
+            <p>Adres zamieszkania<p>
+            <div class="callInput">
+              <label>
+                <div class="icon-ph"><i class="fas fa-map-marker"></i></div>
+                <select id="town">
+                  <option value="1">Wrocław</option>
+                  <option value="2">Warszawa</option>
+                </select> <br>
+              </label>
+
+              <label>
+                <div class="icon-ph"><i class="fas fa-building"></i></div>
+                <input class="custom-text" type="text" name="street" placeholder="Ulica" required> <br>
+              </label>
+
+              <label>
+                <div class="icon-ph"><i class="far fa-building"></i></div>
+                <input class="custom-text" type="text" name="houseNumber" placeholder="Numer domu" required>
+              </label>
+            </div>
+
+
+
+
+            <div class="callInput">
+              <button type="button" id="submitCall" class="btn fourth">Wezwij!</button>
+            </div>
+              <div class="animation"><i class="fas fa-spinner"></i></div>
+              <div class="animation2">Proszę czekać...</div>
+              <div id="c"></div>
+          </form>
+        </section>
+
+
+        {% include 'footer/footer.html.twig' %}
+        <!-- menu -->
+       <script src="JS/jQuery/Nav/showNav.js"></script>
+       {% endblock %}
+
+
+    </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="PL">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Author" content="Mariusz Najwer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Zamów Lekarza!" />
+        <meta name="keywords" content="Lekarz, rezerwacja, zamów" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{% block title %}Rozkład jazdy{% endblock %}</title>
+        {% block stylesheets %}
+
+          <!-- css jquery calendar -->
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+          <link rel="shortcut icon" href="">
+          <link href="{{ asset('CSS/nav.css') }}" rel="stylesheet" />
+          <link href="{{ asset('CSS/footer.css') }}" rel="stylesheet" />
+          <link href="{{ asset('CSS/timetable/timetable.css') }}" rel="stylesheet" />
+          <link href="{{ asset('CSS/jQuery/datepicker.css') }}" rel="stylesheet" />
+
+        {% endblock %}
+        {% block javascripts %}
+
+          <!-- Font Awesome -->
+          <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+          <!-- jquery -->
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+          <!-- jquery calendar-->
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+          <script src="JS/jQuery/Calendar/datepickerPolish.js"></script>
+
+          <!-- stronicowanie -->
+          <script src="JS/AJAX/pageTimetable.js"></script>
+
+          <!-- wyszukiwarka zadan -->
+          <script src="JS/AJAX/searchTimetable.js"></script>
+
+          <!-- nav -->
+          <script src="JS/jQuery/Nav/nav.js"></script>
+
+          <script src="JS/jQuery/scroll/scrollGoTo.js"></script>
+
+        {% endblock %}
+
+    </head>
+    <body>
+        {% block body %}
+
+        {% include 'nav/nav.html.twig' %}
+
+        <section class="timetableShowCase">
+          <div class="title">
+            <p>ROZKŁAD JAZDY</p>
+            <div class="arrow" id="click"></div>
+          </div>
+        </section>
+
+        <section class="chooseDateSection">
+          <div id="start"></div>
+          <h1>Sprawdź wizytę!</h1>
+          <div class="chooseDateList">
+            <form>
+              <label class="calendarLabel">
+                <div class="icon-ph"><i class="far fa-calendar-alt"></i></div>
+                <input class="custom-text" type="text" id="datepicker" placeholder="Dzień wizyty" name="date" required readonly> <br>
+              </label>
+
+              <button type="button" id="submitSearchTimetable" class="btn fourth">Szukaj!</button>
+              <div class="animation"><i class="fas fa-spinner"></i></div>
+              <div class="animation2">Proszę czekać...</div>
+              <!-- <div class="clear"></div> -->
+              <div id="c"></div>
+            </form>
+          </div>
+
+          <div class="flexParentRecord" id="flexParentRecord">
+            <!-- <div class="record">
+              <div class="infoRecord"><span style="color:black">[1]</span> NUMER ZGŁOSZENIA</div>
+              <div class="recordText">111123</div>
+              <div class="infoRecord">NUMER KLIENTA</div>
+              <div class="recordText">128</div>
+              <div class="infoRecord">DZIEŃ WIZYTY</div>
+              <div class="recordText">2018-12-05</div>
+              <div class="infoRecord">GODZINA WIZYTY</div>
+              <div class="recordText">od 10:00 do 14:00</div>
+            </div> -->
+          </div>
+
+          <!-- pagination -->
+          <div class="pagination" id="pagination">
+
+          </div>
+          <!-- <div class="pagination">
+            <a href="#"><div class="left-page"><i class="fas fa-angle-double-left"></i></div></a>
+            <div class="number-page">Strona: 1/100</div>
+            <a href="#"><div class="right-page"><i class="fas fa-angle-double-right"></i></div></a>
+          </div>
+
+          <div class="pagination" id="pagination">
+            <div class="empty"></div>
+            <div class="number-page">Strona: 1/100</div>
+            <a href="#"><div class="right-page"><i class="fas fa-angle-double-right"></i></div></a>
+          </div>
+
+          <div class="pagination">
+            <a href="#"><div class="left-page"><i class="fas fa-angle-double-left"></i></div></a>
+            <div class="number-page">Strona: 999/100</div>
+            <div class="empty"></div>
+          </div> -->
+        </section>
+
+
+        {% include 'footer/footer.html.twig' %}
+        <!-- menu -->
+       <script src="JS/jQuery/Nav/showNav.js"></script>
+       {% endblock %}
+
+
+    </body>
+</html>

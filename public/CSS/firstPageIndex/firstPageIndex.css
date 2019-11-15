@@ -1,0 +1,423 @@
+.indexShowCase{
+  background-image: url('../../IMG/lekarz.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexShowCase:before{
+  position: absolute;
+  content: "";
+  background: rgba(0,0,0,0);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.title {
+  font-size: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+  background-color: rgba(0,0,0,.2);
+}
+
+/* arrow */
+.arrow,
+.arrow:before {
+  position: absolute;
+  left: 50%;
+  z-index: -10;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 4px rgb(255, 255, 255) solid;
+  border-bottom: 4px rgb(255, 255, 255) solid;
+  z-index: 0;
+}
+
+.arrow:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+  border-left: none;
+  border-top: none;
+  border-right: 3px rgb(255, 255, 255) solid;
+  border-bottom: 3px rgb(255, 255, 255) solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+}
+
+.arrow:hover{
+  cursor: pointer;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -10px);
+  }
+}
+
+
+
+/* profil dzialalnosci */
+h1, h3{
+  text-align: center;
+}
+
+h1{
+  margin-top: 70px;
+}
+
+.profilSection{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.profilSection h1 {
+  color: #d53b00;
+  /* color: #2ac4ff; */
+}
+
+.profilSection h3{
+  color: rgb(42, 42, 42);
+}
+
+.profil{
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.iconProfil{
+  font-size: 40px;
+  color: #d53b00;
+}
+
+.childProfil {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  height: 187px;
+  width: 260px;
+  /* background-color: rgba(95, 207, 227, 0.4); */
+  font-size: 16px;
+  font-weight: normal;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.scheduleSection{
+  position: relative;
+  color: white;
+  padding-top: 15px;
+  background: #FF6300;
+  background: linear-gradient(to right, #FF6300 0%, #D51857 100%);
+  padding-bottom: 100px;
+}
+
+.scheduleSection h1{
+  color: white;
+}
+
+.schedule{
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-items: baseline;
+}
+
+.childScheduleNumber .childScheduleText{
+  margin-top: 40px;
+}
+
+.childScheduleNumber{
+  width: 100px;
+  color: yellow;
+  text-align: right;
+  font-size: 40px;
+  font-weight: bolder;
+  font-style: oblique;
+}
+
+.childScheduleText{
+  width: calc(100% - 140px);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  font-weight: bolder;
+}
+
+.childScheduleText a, .childScheduleText a:hover {
+  color: yellow;
+  text-decoration: none;
+}
+
+.childScheduleText a:hover{
+  color: yellow;
+  text-decoration: underline;
+}
+
+
+
+
+.contactSection{
+  position: relative;
+  background-color: #2c3e50;
+  padding-top: 15px;
+  padding-bottom: 100px;
+}
+
+.contactSection h1{
+  color: #2ecc71;
+}
+
+.contact{
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 720px; */
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.contactInfo, .contactForm{
+  margin-top: 30px;
+  width: 340px;
+  text-align: left;
+  /* background-color: red; */
+  padding-left: 20px;
+}
+
+.contactInfo p{
+  margin-top: 0;
+  font-weight: bold;
+  color: white;
+}
+
+.contactForm p, .contactInfo .contactInfoP{
+  color: #f1c40f;
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.contactForm input[type="text"], .contactForm input[type="email"] {
+  color: rgb(124, 124, 124);
+  height: 45px;
+  width: 270px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  outline: none;
+  color:#f1c40f;
+  background-color: transparent;
+  border: solid;
+  border-width: 1px;
+}
+
+.contactForm input[type="email"]::placeholder,  input[type="text"]::placeholder, .contactForm textarea::placeholder {
+ color: rgb(230, 230, 230);
+}
+
+.icon-ph {
+  display: inline-block;
+  padding-left: 12px;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 50px;
+  position:absolute;
+  z-index:3;
+  color: white;
+}
+
+.custom-text {
+  padding-left: 40px;
+}
+
+.contactForm textarea[type="text"]:focus, .contactForm input[type="email"]:focus,  input[type="text"]:focus {
+  border: 1px solid rgb(92, 184, 92);
+  color: white;
+}
+
+.contactForm textarea[type="text"]{
+  color:#f1c40f;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  border: solid;
+  padding: 12px;
+	border-width: 1px;
+  max-width: 286px;
+  min-width: 286px;
+  resize: both;
+  min-height: 100px;
+  max-height: 600px;
+  margin-bottom: 10px;
+  outline: none;
+  background-color: transparent;
+}
+
+.btn {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  cursor: pointer;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.btn:hover, .btn:focus {
+  color: #fff;
+  outline: 0;
+}
+
+.fourth {
+  border-color: #f1c40f;
+  color: #fff;
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: background 300ms ease-in-out;
+}
+.fourth:hover {
+  background-position: 0;
+}
+
+.socialLink{
+  color: white;
+  text-decoration: underline;
+}
+
+.socialLink:hover{
+  color: #f1c40f;
+}
+
+.msgSent{
+  margin-top: 20px;
+  background-color: #2ecc71;
+  color: white;
+  padding: 10px;
+  width: calc(100% - 50px);
+}
+
+.msgWrongEmail{
+  margin-top: 20px;
+  background-color: #e95324;
+  color: white;
+  padding: 10px;
+  width: calc(100% - 50px);
+}
+
+.animation2{
+  margin-left: 20px;
+  margin-top: 20px;
+  color: white;
+  display: none;
+}
+
+.animation{
+  margin-top: 20px;
+  color: white;
+  display: none;
+  -webkit-animation:spin 2s linear infinite;
+   -moz-animation:spin 2s linear infinite;
+   animation:spin 2s linear infinite;
+   position: absolute;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 45px;
+  }
+
+  .indexShowCase{
+    background-attachment: scroll;
+  }
+
+  .childScheduleNumber{
+    width: 60px;
+  }
+
+  .childScheduleText{
+    width: calc(100% - 100px);
+  }
+
+  .contact{
+    width: 90%;
+  }
+
+  .contactForm input[type="text"], .contactForm input[type="email"] {
+    width: 240px;
+  }
+
+  .contactForm textarea[type="text"]{
+    min-width: 256px;
+  }
+
+  .contactInfo, .contactForm{
+    padding-left: 0px;
+  }
+
+  .schedule{
+    width: 90%;
+  }
+
+  .msgWrongEmail, .msgSent{
+    width: 260px;
+  }
+}

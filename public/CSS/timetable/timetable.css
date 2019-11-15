@@ -1,0 +1,362 @@
+.timetableShowCase{
+  background-image: url('../../IMG/timetable.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.timetableShowCase:before{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.title {
+  position: absolute;
+  z-index: 0;
+  font-size: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color:white;
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+  background-color: rgba(0,0,0,.2);
+}
+
+/* arrow */
+.arrow,
+.arrow:before {
+  position: absolute;
+  left: 50%;
+  z-index: -10;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  -webkit-transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 4px rgb(255, 255, 255) solid;
+  border-bottom: 4px rgb(255, 255, 255) solid;
+  z-index: 0;
+}
+
+.arrow:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+  border-left: none;
+  border-top: none;
+  border-right: 3px rgb(255, 255, 255) solid;
+  border-bottom: 3px rgb(255, 255, 255) solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+}
+
+.arrow:hover{
+  cursor: pointer;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -10px);
+  }
+}
+
+.chooseDateSection{
+  padding-top: 100px;
+  background: #FF6300;
+  background: linear-gradient(to right, #FF6300 0%, #D51857 100%);
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.chooseDateSection h1{
+  color: white;
+  letter-spacing: 1px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.chooseDateList{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chooseDateSection input[type="text"] {
+  color: rgb(124, 124, 124);
+  height: 45px;
+  width: 270px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  outline: none;
+  color:#f1c40f;
+  background-color: transparent;
+  border: solid;
+  border-width: 1px;
+}
+
+.chooseDateSection input[type="text"]::placeholder {
+ color: rgb(255, 255, 255);
+}
+
+.icon-ph {
+  display: inline-block;
+  padding-left: 12px;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 50px;
+  position:absolute;
+  z-index:3;
+  color: white;
+}
+
+.custom-text {
+  padding-left: 40px;
+}
+
+.chooseDateSection input[type="text"]:focus {
+  border: 1px solid rgb(92, 184, 92);
+  color: white;
+}
+
+.calendarLabel{
+  float: left;
+}
+.clear{
+ clear: both;
+}
+
+.btn {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  cursor: pointer;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  padding: 0.9em 2.6em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.btn:hover, .btn:focus {
+  color: #fff;
+  outline: 0;
+}
+
+.fourth {
+  border-color: #f1c40f;
+  color: #fff;
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: background 300ms ease-in-out;
+}
+.fourth:hover {
+  background-position: 0;
+}
+
+.msgSent{
+  margin-top: 20px;
+  background-color: #2ecc71;
+  color: white;
+  padding: 10px;
+  width: calc(100% - 50px);
+}
+
+.msgWrong{
+  margin-top: 20px;
+  background-color: #1d1d1d;
+  color: white;
+  padding: 10px;
+  width: 292px;
+}
+
+.animation2{
+  margin-left: 20px;
+  margin-top: 20px;
+  color: white;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.animation{
+  margin-top: 20px;
+  color: white;
+  display: none;
+  -webkit-animation:spin 2s linear infinite;
+   -moz-animation:spin 2s linear infinite;
+   animation:spin 2s linear infinite;
+   position: absolute;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+.flexParentRecord{
+  margin-left: 10%;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.record{
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: rgba(102, 59, 59, 0.78);
+  width: 260px;
+}
+
+.infoRecord{
+  font-weight: bold;
+  font-size: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: rgb(80, 174, 249);
+}
+
+.recordText{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: rgb(8, 87, 150);
+  font-size: 12px;
+}
+
+
+
+
+
+
+
+
+.pagination{
+  margin-top: 70px;
+  height: 40px;
+  width: 60%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-page, .right-page{
+  border-color: #f1c40f;
+  color: #f1c40f;
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.left-page:hover, .right-page:hover{
+  color: white;
+  cursor: pointer;
+  background-color: #f1c40f;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+	transition: all .2s ease-in-out;
+}
+
+.number-page{
+  color: white;
+}
+
+.empty{
+  width: 35px;
+  background-color: red;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 45px;
+  }
+
+  .pagination{
+    width: 80%;
+  }
+
+  .number-page{
+    font-size: 12px;
+  }
+
+  .timetableShowCase{
+    background-attachment: scroll;
+  }
+
+  .chooseDateList{
+    width: 85%;
+  }
+
+  .flexParentRecord{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .chooseDateSection input[type="text"] {
+    width: 240px;
+  }
+
+  .msgWrong{
+    width: 262px;
+  }
+}

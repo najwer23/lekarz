@@ -1,0 +1,82 @@
+html{
+  height: 100%;
+}
+
+body {
+   min-height:100%;
+   position:relative;
+ }
+
+ .push{
+   padding-bottom: 200px;
+ }
+
+ footer {
+   bottom:0;
+   position:absolute;
+   min-height: 200px;
+   width: 100%;
+   background-color: rgb(36, 39, 43);
+ }
+
+.socialFooter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+}
+
+.octagon{
+  color: rgb(128, 34, 101);
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 50px;
+  width: 50px;
+  /* background-color: rgb(240, 190, 9); */
+  background-color: rgb(240, 237, 8);
+  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.socialFooter a:hover {
+  color:rgb(240, 237, 8);
+  background-color:  rgb(128, 34, 101);
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+	transition: all .2s ease-in-out;
+}
+
+.footer-laws{
+  /* margin-top: -14px; */
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #181818;
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  color: rgb(240, 240, 240);
+  line-height: 50px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 400px) {
+  .footer-laws{
+    padding-top: 30px;
+    line-height: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+    height: 70px;
+  }
+
+  .push{
+    padding-bottom: 250px;
+  }
+}
